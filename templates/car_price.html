@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Car Price</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='car_price_style.css')}}"> <!-- "car_price_style.css"-->
+		<link rel="shortcut icon" href="{{ url_for('static', filename='car_icon.png') }}">
+		<!-- Boxicons CDN Link -->
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="viewport" content="width=device-wirth, initial-scale=1.0">
+	</head>
+<body>
+	<div class="sidebar">
+		<div class="logo-details">
+			<i class='bx bx-menu'></i>
+			<span class="logo_name">Apps Menu</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<div class="icon-link">
+					<a href="/maindashboard">
+						<i class='bx bx-grid-alt'></i>
+						<span class="link-name">Dashboard</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/maindashboard">Dashboard</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/myprofile">
+						<i class='bx bxs-user'></i>
+						<span class="link-name">My Profile</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/myprofile">My Profile</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/diabetes">
+						<i class='bx bxs-clinic'></i>
+						<span class="link-name">Diabetes Predictor</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/diabetes">Diabetes Predictor</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/restaurant">
+						<i class='bx bx-restaurant'></i>
+						<span class="link-name">Restaurant Review</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/restaurant">Restaurant Review</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/spamsms">
+						<i class='bx bx-mail-send'></i>
+						<span class="link-name">Spam SMS</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/spamsms">Spam SMS</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/studentg">
+						<i class='bx bxs-graduation'></i>
+						<span class="link-name">Students Grading</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/studentg">Students Grading</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/moviegenre">
+						<i class='bx bxs-movie-play'></i>
+						<span class="link-name">Movies Genre</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/moviegenre">Movies Genre</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/carprice">
+						<i class='bx bxs-car' ></i>
+						<span class="link-name">Car Price</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/carprice">Car Price</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/mobileclassify">
+						<i class='bx bxs-devices' ></i>
+						<span class="link-name">Mobile Classify</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/mobileclassify">Mobile Classify</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<a href="#">
+							<img src="{{url_for('static', filename='SUNNY.jpg')}}">
+						</a>
+					</div>
+					<div class="name-job">
+						<div class="profile-name">ShaRiAT SuNnY</div>
+						<div class="job-title">Data Analytics</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Header Box Start -->
+	<section class="home-section">
+		<div class="main-headtext">
+			<div class="headtext">
+        		<a href="#"></a>
+        		<header>Car Price Prediction Form</header>
+      		</div>
+    	</div>
+		<!-- Header Box end -->
+
+
+		<!-- main square-box-->
+		<div class="total-square-box">
+			<div class="square-box">
+	    		<div class="mainpage">
+					<header>Car Features Info</header>
+	    		</div>
+	    		<div class="dashboard-icon">
+	    			<i class='bx bxs-car' ></i>
+	    		</div>
+	        	<div class="col-md-6 col-md-push-6 container">
+	      			<div class="ct-icon-boxes">
+	        			<!-- car price form -->
+	        			<section div class="container">
+							<div class="images">
+								<div class="car-img">
+									<a href="#">
+										<img src="{{url_for('static', filename='image.jpg')}}">
+									</a>
+								</div>
+							</div>
+							<div class="car-price-content">
+								<div class="car-price-prediction">
+									<form action="/pridict" method="post">
+										<div class="car-price-details">
+											<div class="select-box">
+												<span class="details">Car Name</span>
+												<select type="text" name="CarName_N" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Alfa_Romero</option>
+					                        		<option value="1">Audi</option>
+					                        		<option value="2">BMW</option>
+					                        		<option value="3">Chevrolet_Impala</option>
+					                        		<option value="4">Dodge_Rampage</option>
+					                        		<option value="5">Honda</option>
+					                        		<option value="6">Isuzu</option>
+					                        		<option value="7">Jaguar</option>
+					                        		<option value="8">Maxda</option>
+					                        		<option value="9">Buick_Electra</option>
+					                        		<option value="10">Mercury_Cougar</option>
+					                        		<option value="11">Mitsubishi</option>
+					                        		<option value="12">Nissan</option>
+					                        		<option value="13">Peugeot</option>
+					                        		<option value="14">Plymouth</option>
+					                        		<option value="15">Porsche_Macan</option>
+					                        		<option value="16">Renault</option>
+					                        		<option value="17">Saab</option>
+					                        		<option value="18">Subaru</option>
+					                        		<option value="19">Toyota</option>
+					                        		<option value="20">Vokswagen</option>
+					                        		<option value="21">VW_Dasher</option>
+					                        		<option value="22">Volkswagen</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Symboling</span>
+												<input placeholder="Max Value 1 - 3" name="symboling" required>
+											</div>
+											<div class="select-box">
+												<span class="details">Fuel Type</span>
+												<select type="text" name="fueltype" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Gas</option>
+													<option value="1">Diesel</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Aspiration</span>
+												<select type="text" name="aspiration" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Standard</option>
+													<option value="1">Turbo</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Door Number</span>
+												<select type="text" name="doornumber" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Two</option>
+													<option value="1">Four</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Car Body</span>
+												<select type="text" name="carbody" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Conver_Tible</option>
+													<option value="1">Hatch_Back</option>
+													<option value="2">Sedan</option>
+													<option value="3">Wagon</option>
+													<option value="4">Hard_Top</option>
+												</select>
+											</div>
+										</div>
+										<div class="car-price-details-part-2">
+											<div class="select-box">
+												<span class="details">Drive Wheel</span>
+												<select type="text" name="drivewheel" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="1">Forward</option>
+													<option value="0">Reverseward</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Engine Location</span>
+												<select type="text" name="enginelocation" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Front</option>
+													<option value="1">Rear</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Wheel Base</span>
+												<input type="text" name="wheelbase" placeholder="Example Value - 88" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Car Length</span>
+												<input type="text" name="carlength" placeholder="Example Value - 192" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Car Width</span>
+												<input type="text" name="carwidth" placeholder="Example Value - 66" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Car Height</span>
+												<input type="text" name="carheight" placeholder="Example Value - 54" required>
+											</div>
+										</div>
+										<div class="car-price-details-part-3">
+											<div class="input-box">
+												<span class="details">Curb Weight</span>
+												<input type="text" name="curbweight" placeholder="Example Value - 3053" required>
+											</div>
+											<div class="select-box">
+												<span class="details">Engine Type</span>
+												<select type="text" name="enginetype" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">dohc</option>
+													<option value="1">ohcv</option>
+													<option value="2">ohc</option>
+													<option value="4">rotor</option>
+													<option value="5">ohcf</option>
+													<option value="6">dohcv</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Cylinder Number</span>
+												<select type="text" name="cylindernumber" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Two</option>
+													<option value="1">Three</option>
+													<option value="2">Four</option>
+													<option value="3">Five</option>
+													<option value="4">Six</option>
+													<option value="5">Eight</option>
+													<option value="6">Twelve</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Engine Size</span>
+												<input type="text" name="enginesize" placeholder="Example Value - 164" required>
+											</div>
+											<div class="select-box">
+												<span class="details">Fuel System</span>
+												<select type="text" name="fuelsystem" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">mpfi</option>
+													<option value="1">bbl</option>
+													<option value="2">mfi</option>
+													<option value="3">spfi</option>
+													<option value="4">idi</option>
+													<option value="5">spdi</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Bore Ratio</span>
+												<input type="text" name="boreratio" placeholder="Example Value - 4" required>
+											</div>
+										</div>
+										<div class="car-price-details-part-4">
+											<div class="input-box">
+												<span class="details">Stroke</span>
+												<input type="text" name="stroke" placeholder="Example Value - 3" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Compression Ratio</span>
+												<input type="text" name="compressionratio" placeholder="Example Value - 8" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Horse Power</span>
+												<input type="text" name="horsepower" placeholder="Example Value - 111" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Peak R.P.M</span>
+												<input type="text" name="peakrpm" placeholder="Example Value - 5800" required>
+											</div>
+											<div class="input-box">
+												<span class="details">City MPG</span>
+												<input type="text" name="citympg" placeholder="Example Value - 21" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Highway MPG</span>
+												<input type="text" name="highwaympg" placeholder="Example Value - 27" required>
+											</div>
+										</div>
+										<div class="savebutton">
+											<div class="submitbtn">
+												<button class="savebtn" type="submit" value="Submit">Save</button>
+											</div>
+											<div class="resultbtn">
+												<a href='#modalbox'>
+													<span class="showbtn">Show Results</span>
+													<!-- onclick="location.href='#modalbox'" -->
+												</a>
+											</div>
+										</div>
+									</form>
+									<div id="modalbox" class="modal">
+										<div class="modalcontent">
+											<div class="modalcontent-header">
+												<h1>Results</h1>
+											</div>
+											<div class="result-prediction-box">
+												<span>{{prediction}}</span>
+											</div>
+											<a href="#" class="modalclose">&times;</a>
+											<div class="modal-footer">
+												<p>Design by @Shariat Sunny</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+	    			</div>
+	    		</div>
+				<div class="back-to-home">
+					<div class="back-botton">
+						<a href="/maindashboard">
+							<button class="homebtn"><i class='bx bx-home'></i>Home</button>
+						</a>
+					</div>
+				</div>
+	    	</div>
+    		<!-- Footer Start-->
+	    	<div class='footer'>
+	        	<p class='footer-description'>Design by @Shariat Sunny</p>
+	    	</div>
+	    	<!-- Footer Start-->
+		</div>
+		<!-- main square-box end -->
+    </section>
+
+	<script>
+	let arrow = document.querySelectorAll(".arrow");
+	for (var i = 0; i < arrow.length; i++) {
+		 arrow[i].addEventListener("click", (e)=>{
+		let arrowParent = e.target.parentElement.parentElement;
+		arrowParent.classList.toggle("showMenu");
+		});
+	}
+
+	let sidebar = document.querySelector(".sidebar");
+	let sidebarBtn = document.querySelector(".bx-menu");
+	console.log(sidebarBtn);
+	sidebarBtn.addEventListener("click", ()=>{
+		sidebar.classList.toggle("close");
+	});
+	</script>
+</body>
+</html>

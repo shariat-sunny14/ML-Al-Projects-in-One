@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>My Profile</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='my_profile_style.css')}}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='profile_icon.png') }}">
+		<!-- Boxicons CDN Link -->
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="viewport" content="width=device-wirth, initial-scale=1.0">
+	</head>
+<body>
+	<div class="sidebar">
+		<div class="logo-details">
+			<i class='bx bx-menu'></i>
+			<span class="logo_name">Apps Menu</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<div class="icon-link">
+					<a href="/maindashboard">
+						<i class='bx bx-grid-alt'></i>
+						<span class="link-name">Dashboard</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/maindashboard">Dashboard</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/myprofile">
+						<i class='bx bxs-user'></i>
+						<span class="link-name">My Profile</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/myprofile">My Profile</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/diabetes">
+						<i class='bx bxs-clinic'></i>
+						<span class="link-name">Diabetes Predictor</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/diabetes">Diabetes Predictor</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/restaurant">
+						<i class='bx bx-restaurant'></i>
+						<span class="link-name">Restaurant Review</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/restaurant">Restaurant Review</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/spamsms">
+						<i class='bx bx-mail-send'></i>
+						<span class="link-name">Spam SMS</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/spamsms">Spam SMS</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/studentg">
+						<i class='bx bxs-graduation'></i>
+						<span class="link-name">Students Grading</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/studentg">Students Grading</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/moviegenre">
+						<i class='bx bxs-movie-play'></i>
+						<span class="link-name">Movies Genre</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/moviegenre">Movies Genre</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/carprice">
+						<i class='bx bxs-car' ></i>
+						<span class="link-name">Car Price</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/carprice">Car Price</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/mobileclassify">
+						<i class='bx bxs-devices' ></i>
+						<span class="link-name">Mobile Classify</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/mobileclassify">Mobile Classify</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<a href="#">
+							<img src="{{url_for('static', filename='SUNNY.jpg')}}">
+						</a>
+					</div>
+					<div class="name-job">
+						<div class="profile-name">ShaRiAT SuNnY</div>
+						<div class="job-title">Data Analytics</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Header Box Start -->
+	<section class="home-section">
+		<div class="main-headtext">
+			<div class="headtext">
+        		<a href="#"></a>
+        		<header>My Profile</header>
+      		</div>
+    	</div>
+		<!-- Header Box end -->
+
+
+		<!-- main square-box-->
+		<div class="total-square-box">
+			<div class="square-box">
+				<div class="profile">
+					<div class="profile-img">
+						<img id="img" src="{{url_for('static', filename='cvpart1.jpg')}}"/>
+					</div>
+					<div class="img-nxt-prvus-btn">
+						<div class="profile-pdf">
+							<a href="{{url_for('static', filename='CV of Shariatuzzaman.pdf')}}" target="_blank" download>
+								<button class="download-btn" type="submit"><i class='bx bxs-download'></i>Click to Download</button>
+							</a>
+						</div>
+						<div class="previous-image-button">
+							<button class="previous-btn" type="button" onclick="displayPreviousImage()"><i class='bx bx-skip-previous' ></i>Previous</button>
+						</div>
+						<div class="next-image-button">
+							<button class="next-btn" type="button" onclick="displayNextImage()"><i class='bx bx-skip-next' ></i>Next</button>
+						</div>
+					</div>
+				</div>
+	    	</div>
+    		<!-- Footer Start-->
+	    	<div class='footer'>
+	        	<p class='footer-description'>Design by @Shariat Sunny</p>
+	    	</div>
+	    	<!-- Footer Start-->
+		</div>
+		<!-- main square-box end -->
+    </section>
+
+	<script>
+		let arrow = document.querySelectorAll(".arrow");
+		for (var i = 0; i < arrow.length; i++) {
+			 arrow[i].addEventListener("click", (e)=>{
+			let arrowParent = e.target.parentElement.parentElement;
+			arrowParent.classList.toggle("showMenu");
+			});
+		}
+
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".bx-menu");
+		console.log(sidebarBtn);
+		sidebarBtn.addEventListener("click", ()=>{
+			sidebar.classList.toggle("close");
+		});
+	</script>
+	<script type = "text/javascript">
+        function displayNextImage() {
+            x = (x === images.length - 1) ? 0 : x + 1;
+            document.getElementById("img").src = images[x];
+          }
+
+        function displayPreviousImage() {
+            x = (x <= 0) ? images.length - 1 : x - 1;
+            document.getElementById("img").src = images[x];
+          }
+
+        function startTimer() {
+            setInterval(displayNextImage, 3000);
+          }
+
+          var images = [], x = -1;
+          images[0] = "{{url_for('static', filename='cvpart2.jpg')}}";
+          images[1] = "{{url_for('static', filename='cvpart1.jpg')}}";
+    </script>
+</body>
+</html>

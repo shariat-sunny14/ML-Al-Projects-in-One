@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+	<head>
+		<meta charset="utf-8">
+		<title>Mobile Classify</title>
+		<link rel="stylesheet" href="{{url_for('static', filename='mobile_classify_style.css')}}">
+		<link rel="shortcut icon" href="{{ url_for('static', filename='mobile_icon.png') }}">
+		<!-- Boxicons CDN Link -->
+		<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+		<meta name="viewport" content="width=device-wirth, initial-scale=1.0">
+	</head>
+<body>
+	<div class="sidebar">
+		<div class="logo-details">
+			<i class='bx bx-menu'></i>
+			<span class="logo_name">Apps Menu</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<div class="icon-link">
+					<a href="/maindashboard">
+						<i class='bx bx-grid-alt'></i>
+						<span class="link-name">Dashboard</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/maindashboard">Dashboard</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/myprofile">
+						<i class='bx bxs-user'></i>
+						<span class="link-name">My Profile</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/myprofile">My Profile</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/diabetes">
+						<i class='bx bxs-clinic'></i>
+						<span class="link-name">Diabetes Predictor</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/diabetes">Diabetes Predictor</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/restaurant">
+						<i class='bx bx-restaurant'></i>
+						<span class="link-name">Restaurant Review</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/restaurant">Restaurant Review</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/spamsms">
+						<i class='bx bx-mail-send'></i>
+						<span class="link-name">Spam SMS</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/spamsms">Spam SMS</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/studentg">
+						<i class='bx bxs-graduation'></i>
+						<span class="link-name">Students Grading</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/studentg">Students Grading</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/moviegenre">
+						<i class='bx bxs-movie-play'></i>
+						<span class="link-name">Movies Genre</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/moviegenre">Movies Genre</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/carprice">
+						<i class='bx bxs-car' ></i>
+						<span class="link-name">Car Price</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/carprice">Car Price</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/mobileclassify">
+						<i class='bx bxs-devices' ></i>
+						<span class="link-name">Mobile Classify</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/mobileclassify">Mobile Classify</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<a href="#">
+							<img src="{{url_for('static', filename='SUNNY.jpg')}}">
+						</a>
+					</div>
+					<div class="name-job">
+						<div class="profile-name">ShaRiAT SuNnY</div>
+						<div class="job-title">Data Analytics</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Header Box Start -->
+	<section class="home-section">
+		<div class="main-headtext">
+			<div class="headtext">
+        		<a href="#"></a>
+        		<header>Mobile Classification</header>
+      		</div>
+    	</div>
+		<!-- Header Box end -->
+
+		<!-- main square-box-->
+		<div class="total-square-box">
+			<div class="square-box">
+	    		<div class="mainpage">
+					<header>Mobile Features</header>
+	    		</div>
+	    		<div class="dashboard-icon">
+	    			<i class='bx bxs-devices'></i>
+	    		</div>
+	        	<div class="col-md-6 col-md-push-6 container">
+	      			<div class="ct-icon-boxes">
+	        			<!-- mobile price form -->
+	        			<section div class="container">
+							<div class="mobile-price-content">
+								<div class="mobile-price-prediction">
+									<form action="/mpridict" method="post">
+										<div class="mobile-price-details">
+											<div class="input-box">
+												<span class="details">Battery Power</span>
+												<input type="number" name="battery_power" placeholder="Example Value - 800 Upper" required>
+											</div>
+											<div class="select-box">
+												<span class="details">Bluetooth</span>
+												<select name="bluetooth" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Clock Speed</span>
+												<input type="number" placeholder="Max Value 1 - 5" name="clock_speed" required>
+											</div>
+											<div class="select-box">
+												<span class="details">Dual Sim</span>
+												<select name="dual_sim" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Front Camera</span>
+												<input type="number" name="fc" placeholder="Example Value - 0 Upper" required>
+											</div>
+										</div>
+										<div class="mobile-price-details-part-2">
+											<div class="select-box">
+												<span class="details">FourG (4G)</span>
+												<select name="four_g" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+											<div class="input-box">
+												<span class="details">Int Memory</span>
+												<input type="number" name="int_memory" placeholder="Example Value - 7 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Mobile Dep</span>
+												<input type="number" name="m_dep" placeholder="Example Value - 0 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Mobile Weight</span>
+												<input type="number" name="mobile_wt" placeholder="Example Value - 160 as Like" required>
+											</div>
+											<div class="input-box">
+												<span class="details">N Cores</span>
+												<input type="number" name="n_cores" placeholder="Example Value - 0 Upper" required>
+											</div>
+										</div>
+										<div class="mobile-price-details-part-3">
+											<div class="input-box">
+												<span class="details">PC</span>
+												<input type="number" name="pc" placeholder="Example Value - 0 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Pixel Height</span>
+												<input type="number" name="px_height" placeholder="Example Value - 10 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Pixel Width</span>
+												<input type="number" name="px_width" placeholder="Example Value - 10 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Ram</span>
+												<input type="number" name="ram" placeholder="Example Value - 2600 as Like" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Screen Height</span>
+												<input type="number" name="sc_h" placeholder="Example Value - 10 Upper" required>
+											</div>
+										</div>
+										<div class="mobile-price-details-part-4">
+											<div class="input-box">
+												<span class="details">Screen Width</span>
+												<input type="number" name="sc_w" placeholder="Example Value - 10 Upper" required>
+											</div>
+											<div class="input-box">
+												<span class="details">Talk Time</span>
+												<input type="number" name="talk_time" placeholder="Example Value - 10 Upper" required>
+											</div>
+											<div class="select-box">
+												<span class="details">ThreeG (3G)</span>
+												<select name="three_g" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">Touch Screen</span>
+												<select name="touch_screen" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+											<div class="select-box">
+												<span class="details">WiFi</span>
+												<select name="wifi" required>
+													<option value="" disabled selected hidden>Click Here</option>
+													<option value="0">Yes</option>
+													<option value="1">No</option>
+												</select>
+											</div>
+										</div>
+										<div class="savebutton">
+											<div class="submitbtn">
+												<button class="savebtn" type="submit" value="Submit">Save</button>
+											</div>
+											<div class="resultbtn">
+												<a href='#modalbox'>
+													<span class="showbtn">Show Results</span>
+													<!-- onclick="location.href='#modalbox'" -->
+												</a>
+											</div>
+										</div>
+									</form>
+									<div id="modalbox" class="modal">
+										<div class="modalcontent">
+											<div class="modalcontent-header">
+												<h1>Results</h1>
+											</div>
+											<div class="result-prediction-box">
+												<span>{{mprediction}}</span>
+											</div>
+											<a href="#" class="modalclose">&times;</a>
+											<div class="modal-footer">
+												<p>Design by @Shariat Sunny</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="back-to-home">
+					<div class="back-botton">
+						<a href="/maindashboard">
+							<button class="homebtn"><i class='bx bx-home'></i>Home</button>
+						</a>
+					</div>
+				</div>		    		
+			</div>
+			<!-- Footer Start-->
+			<div class='footer'>
+				<p class='footer-description'>Design by @Shariat Sunny</p>
+			</div>
+			<!-- Footer Start-->
+		</div>
+		<!-- main square-box end -->
+    </section>
+
+	<script>
+	let arrow = document.querySelectorAll(".arrow");
+	for (var i = 0; i < arrow.length; i++) {
+		 arrow[i].addEventListener("click", (e)=>{
+		let arrowParent = e.target.parentElement.parentElement;
+		arrowParent.classList.toggle("showMenu");
+		});
+	}
+
+	let sidebar = document.querySelector(".sidebar");
+	let sidebarBtn = document.querySelector(".bx-menu");
+	console.log(sidebarBtn);
+	sidebarBtn.addEventListener("click", ()=>{
+		sidebar.classList.toggle("close");
+	});
+	</script>
+</body>
+</html>

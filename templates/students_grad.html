@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<title>Students Grading</title>
+	<link rel="stylesheet" href="{{url_for('static', filename='students_grad_style.css')}}">
+	<link rel="shortcut icon" href="{{ url_for('static', filename='grad_icon.png') }}">
+	<!-- Boxicons CDN Link -->
+	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+	<meta name="viewport" content="width=device-wirth, initial-scale=1.0">
+</head>
+
+<body>
+	<div class="sidebar">
+		<div class="logo-details">
+			<i class='bx bx-menu'></i>
+			<span class="logo_name">Apps Menu</span>
+		</div>
+		<ul class="nav-links">
+			<li>
+				<div class="icon-link">
+					<a href="/maindashboard">
+						<i class='bx bx-grid-alt'></i>
+						<span class="link-name">Dashboard</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/maindashboard">Dashboard</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/myprofile">
+						<i class='bx bxs-user'></i>
+						<span class="link-name">My Profile</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/myprofile">My Profile</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/diabetes">
+						<i class='bx bxs-clinic'></i>
+						<span class="link-name">Diabetes Predictor</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/diabetes">Diabetes Predictor</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/restaurant">
+						<i class='bx bx-restaurant'></i>
+						<span class="link-name">Restaurant Review</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/restaurant">Restaurant Review</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/spamsms">
+						<i class='bx bx-mail-send'></i>
+						<span class="link-name">Spam SMS</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/spamsms">Spam SMS</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/studentg">
+						<i class='bx bxs-graduation'></i>
+						<span class="link-name">Students Grading</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/studentg">Students Grading</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/moviegenre">
+						<i class='bx bxs-movie-play'></i>
+						<span class="link-name">Movies Genre</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/moviegenre">Movies Genre</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/carprice">
+						<i class='bx bxs-car'></i>
+						<span class="link-name">Car Price</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/carprice">Car Price</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="icon-link">
+					<a href="/mobileclassify">
+						<i class='bx bxs-devices'></i>
+						<span class="link-name">Mobile Classify</span>
+					</a>
+				</div>
+				<ul class="sub-menu blank">
+					<li><a class="link-name" href="/mobileclassify">Mobile Classify</a></li>
+				</ul>
+			</li>
+			<li>
+				<div class="profile-details">
+					<div class="profile-content">
+						<a href="#">
+							<img src="{{url_for('static', filename='SUNNY.jpg')}}">
+						</a>
+					</div>
+					<div class="name-job">
+						<div class="profile-name">ShaRiAT SuNnY</div>
+						<div class="job-title">Data Analytics</div>
+					</div>
+				</div>
+			</li>
+		</ul>
+	</div>
+
+	<!-- Header Box Start -->
+	<section class="home-section">
+		<div class="main-headtext">
+			<div class="headtext">
+				<a href="#"></a>
+				<header>Students Grading Classification</header>
+			</div>
+		</div>
+		<!-- Header Box end -->
+
+		<!-- main square-box-->
+		<div class="total-square-box">
+			<div class="square-box">
+				<div class="mainpage">
+					<header>Score Description</header>
+				</div>
+				<div class="dashboard-icon">
+					<i class='bx bxs-graduation'></i>
+				</div>
+				<div class="col-md-6 col-md-push-6 container">
+					<div class="ct-icon-boxes">
+						<!-- student grad form -->
+						<section div class="container">
+							<div class="students-grad-content">
+								<div class="students-grad-prediction">
+									<form action="/spridict" method="post">
+										<div class="student-form-details">
+											<div class="student-form-images">
+												<img src="{{url_for('static', filename='students_grad.png')}}">
+											</div>
+											<div class="student-entry-form">
+												<div class="main-entry-form">
+													<div class="form">
+														<input type="number" name="cse_math_score" id="CSE Math Score"
+															class="form__input" autocomplete="off"
+															placeholder="Enter Your CSE Math Score" required>
+														<label for="CSE Math Score" class="form__label">CSE Math
+															Score</label>
+													</div>
+												</div>
+												<div class="main-entry-form-part1">
+													<div class="form">
+														<input type="number" name="eee_score" id="EEE Score"
+															class="form__input" autocomplete="off"
+															placeholder="Enter Your EEE Score" required>
+														<label for="EEE Score" class="form__label">EEE Score</label>
+													</div>
+												</div>
+												<div class="main-entry-form-part2">
+													<div class="form">
+														<input type="number" name="cse_deploy_score" id="CSE Score"
+															class="form__input" autocomplete="off"
+															placeholder="Enter Your CSE Score" required>
+														<label for="CSE Score" class="form__label">CSE Score</label>
+													</div>
+												</div>
+												<div class="main-entry-form-part3">
+													<div class="form">
+														<input type="number" name="math_score" id="Math IV's score"
+															class="form__input" autocomplete="off"
+															placeholder="Enter Your Math IV's score" required>
+														<label for="Math IV's score" class="form__label">Math IV's
+															score</label>
+													</div>
+												</div>
+											</div>
+										</div>
+										<div class="savebutton">
+											<div class="submitbtn">
+												<button class="savebtn" type="submit" value="Submit">Save</button>
+											</div>
+											<div class="resultbtn">
+												<a href='#modalbox'>
+													<span class="showbtn">Show Results</span>
+													<!-- onclick="location.href='#modalbox'" -->
+												</a>
+											</div>
+										</div>
+									</form>
+									<div id="modalbox" class="modal">
+										<div class="modalcontent">
+											<div class="modalcontent-header">
+												<h1>Results</h1>
+											</div>
+											<div class="result-prediction-box">
+												<span>{{sprediction}}</span>
+											</div>
+											<a href="#" class="modalclose">&times;</a>
+											<div class="modal-footer">
+												<p>Design by @Shariat Sunny</p>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+				<div class="back-to-home">
+					<div class="back-botton">
+						<a href="/maindashboard">
+							<button class="homebtn"><i class='bx bx-home'></i>Home</button>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- Footer Start-->
+			<div class='footer'>
+				<p class='footer-description'>Design by @Shariat Sunny</p>
+			</div>
+			<!-- Footer Start-->
+		</div>
+		<!-- main square-box end -->
+	</section>
+
+	<script>
+		let arrow = document.querySelectorAll(".arrow");
+		for (var i = 0; i < arrow.length; i++) {
+			arrow[i].addEventListener("click", (e) => {
+				let arrowParent = e.target.parentElement.parentElement;
+				arrowParent.classList.toggle("showMenu");
+			});
+		}
+
+		let sidebar = document.querySelector(".sidebar");
+		let sidebarBtn = document.querySelector(".bx-menu");
+		console.log(sidebarBtn);
+		sidebarBtn.addEventListener("click", () => {
+			sidebar.classList.toggle("close");
+		});
+	</script>
+</body>
+</html>

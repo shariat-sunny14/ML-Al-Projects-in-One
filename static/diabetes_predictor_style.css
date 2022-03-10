@@ -1,0 +1,914 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+*
+{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: 'Poppins', sans-serif;
+}
+
+.sidebar{
+	position: fixed;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 260px;
+	background: #11101d;
+	z-index: 100;
+	transition: all 0.5s ease;
+}
+
+
+.sidebar.close{
+	width: 78px;
+}
+
+.sidebar .logo-details{
+	height: 60px;
+	width: 100%;
+	display: flex;
+	align-items: center;
+}
+
+.sidebar .logo-details i{
+	font-size: 30px;
+	color: #fff;
+	height: 50px;
+	min-width: 78px;
+	text-align: center;
+	line-height: 50px;
+}
+
+.sidebar .logo-details i:hover{
+	color: darkred;
+	font-size: 38px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+
+.sidebar .logo-details .logo_name{
+	font-size: 22px;
+	color: #fff;
+	font-weight: 600;
+	transition: 0.3s ease;
+	transition-delay: 0.1s;
+}
+
+.sidebar.close .logo-details .logo_name{
+	opacity: 0;
+	pointer-events: none;
+	transition-delay: 0s;
+}
+
+.sidebar .nav-links{
+	height: 100%;
+	padding: 30px 0 150px 0;
+	overflow: auto;
+}
+
+.sidebar.close .nav-links{
+	overflow: visible;
+}
+
+.sidebar .nav-links::-webkit-scrollbar{
+	display: none;
+}
+
+.sidebar .nav-links li{
+	position: relative;
+	list-style: none;
+	transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li:hover{
+	background: #2F3366;
+}
+
+.sidebar .nav-links li .icon-link{
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+
+.sidebar.close .nav-links li .icon-link{
+	display: block;
+}
+
+.sidebar .nav-links li i{
+	height: 50px;
+	min-width: 78px;
+	text-align: center;
+	line-height: 50px;
+	color: #fff;
+	font-size: 20px;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+.sidebar .nav-links li i:hover{
+	color: darkred;
+	font-size: 30px;
+	font-size: 600;
+	transition: all 0.3s ease;
+	cursor: pointer;
+}
+
+
+.sidebar .nav-links li.showMenu i.arrow{
+	transform: rotate(-180deg);
+}
+
+.sidebar.close .nav-links i.arrow{
+	display: none;
+}
+
+.sidebar .nav-links li a{
+	display: flex;
+	align-items: center;
+	text-decoration: none;
+}
+
+.sidebar .nav-links li a .link-name{
+	font-size: 18px;
+	font-weight: 400;
+	color: #fff;
+}
+
+.sidebar .nav-links li a .link-name:hover{
+	font-size: 19px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+
+.sidebar.close .nav-links li a .link-name{
+	opacity: 0;
+	pointer-events: none;
+}
+
+
+.sidebar .nav-links li .sub-menu{
+	padding: 6px 6px 14px 80px;
+	margin-top: -10px;
+	background: #1b1b31;
+	display: none;
+}
+
+.sidebar .nav-links li.showMenu .sub-menu{
+	display: block;
+}
+
+.sidebar .nav-links li .sub-menu a{
+	color: #fff;
+	font-size: 15px;
+	padding: 5px 0;
+	white-space: nowrap;
+	opacity: 0.6;
+	transition: all 0.3s ease;
+}
+
+.sidebar .nav-links li .sub-menu a:hover{
+	opacity: 1;
+	font-size: 18px;
+	transition: all 0.4s ease;
+	cursor: pointer;
+}
+
+.sidebar.close .nav-links li .sub-menu{
+	position: absolute;
+	left: 100%;
+	top: -10px;
+	margin-top: 0;
+	padding: 10px 20px;
+	border-radius: 0 6px 6px 0;
+	opacity: 0;
+	display: block;
+	pointer-events: none;
+	transition: 0s;
+}
+
+.sidebar.close .nav-links li:hover .sub-menu{
+	top: 0;
+	opacity: 1;
+	pointer-events: auto;
+	transition: all 0.4s ease;
+}
+
+.sidebar .nav-links li .sub-menu .link-name{
+	display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link-name{
+	display: none;
+}
+
+.sidebar.close .nav-links li .sub-menu .link-name{
+	font-size: 18px;
+	opacity: 1;
+	display: block;
+}
+
+.sidebar.close .nav-links li .sub-menu .link-name:hover{
+	font-size: 22px;
+	transition-delay: 0.1s;
+	cursor: pointer;
+}
+
+.sidebar .nav-links li .sub-menu.blank{
+	opacity: 1;
+	pointer-events: auto;
+	padding: 3px 20px 6px 16px;
+	opacity: 0;
+	pointer-events: none;
+}
+
+.sidebar .nav-links li:hover .sub-menu.blank{
+	top: 50%;
+	transform: translateY(-50%);
+}
+
+.sidebar .profile-details{
+	position: fixed;
+	bottom: 0;
+	width: 260px;
+	display: flex;
+	align-items: center;
+	justify-content: left;
+	background: #1d1b31;
+	padding: 6px 0;
+	transition: all 0.5s ease;
+}
+
+.sidebar.close .profile-details{
+	width: 78px;
+	background: none;
+}
+
+.sidebar .profile-details .profile-content{
+	display: flex;
+	align-items: center;
+}
+
+.sidebar .profile-details img{
+	height: 52px;
+	width: 52px;
+	object-fit: cover;
+	border-radius: 50px;
+	margin: 0 14px 0 12px;
+	background: #fff;
+	padding: 2px;
+	transition: all 0.5s ease;
+}
+
+.sidebar.close .profile-details img{
+	padding: 3px;
+}
+
+.sidebar .profile-details .profile-name{
+	padding-left: 10px;
+	color: #fff;
+	font-size: 20px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+.sidebar .profile-details .job-title{
+	padding-left: 10px;
+	color: #fff;
+	font-size: 13.7px;
+	font-weight: 500;
+	white-space: nowrap;
+}
+
+.sidebar.close .profile-details .profile-name,
+.sidebar.close .profile-details .job-title{
+	display: none;
+}
+.home-section{
+	position: relative;
+	background: #11101d;
+	height: 62px;
+	left: 260px;
+	width: calc(100% - 260px);
+	transition: all 0.5s ease;
+}
+
+.sidebar.close ~ .home-section{
+	left: 78px;
+	width: calc(100% - 78px);
+}
+
+.main-headtext .headtext{
+	position: relative;
+	display: flex;
+	text-align: center;
+  justify-content: center;
+}
+
+.main-headtext .headtext header{
+	position: absolute;
+	top: 14px;
+	color: #fff;
+  font-size: 25px;
+  font-weight: bold;
+  font-style: normal;
+  text-decoration: none;
+  position: absolute;
+}
+
+/*square-box*/
+.total-square-box{
+	position: absolute;
+	display: flex;
+  margin: 1px;
+  left: 0;
+  right: 0;
+  height: 105vh;
+  background: none;
+  width: 99.9%;
+}
+.total-square-box .square-box{
+	position: relative;
+ 	top: 62px;
+  bottom: 0;
+  width: 99.9%;
+	height: 105vh;
+  background: none;
+  border: 1px solid black;
+	border-radius: 5px;
+	transition: all 0.5s ease;
+}
+/*square-box*/
+
+
+/*Dashboard-Header Start*/
+.total-square-box .square-box .mainpage{
+	position: absolute;
+	top: 3px;
+	margin-left: 1.5px;
+	height: 40px;
+	width: 99.7%;
+	border-radius: 5px;
+	color: #fff;
+	border: 1px solid black;
+	background: #252534;
+}
+
+.total-square-box .square-box .mainpage header{
+	position: absolute;
+	color: solid black;
+	font-size: 25px;
+	font-weight: 1000;
+	left: 60px;
+}
+
+.total-square-box .square-box .dashboard-icon{
+	position: absolute;
+	color: solid black;
+	font-size: 25px;
+	font-weight: 1000;
+	top: 6px;
+	left: 20px;
+	color: #fff;
+}
+
+.back-to-home .back-botton{
+	position: absolute;
+	display: flex;
+	right: 0;
+}
+.back-to-home .back-botton .homebtn{
+	position: absolute;
+	top: 7px;
+	display: flex;
+	right: 10px;
+	width: 110px;
+	padding: 6px;
+	border-top: none;
+	border-left: none;
+	border-radius: 50px;
+	outline: none;
+	color: #fff;
+	font-size: 13px;
+	font-weight: 700;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background: #cfa612;
+}
+
+.back-to-home .back-botton .homebtn i{
+	position: absolute;
+	display: flex;
+	font-size: 20px;
+	top: 5.2px;
+	left: 8px;
+	align-items: center;
+	justify-content: center;
+}
+
+.back-to-home .back-botton .homebtn:hover{
+	background: #be9b0f;
+}
+/*Dashboard-Header End*/
+
+
+
+/*mainpage Start*/
+.ct-icon-boxes .ct-icon-box {
+	padding: 0;
+	margin-top: 20px;
+	margin-left: 10px;
+  width: 30%;
+  float: left;
+  position: relative;
+  border: 2px solid #ccc;
+  display: flex;
+  text-align: center;
+  color: #292929;
+  left: 15px;
+}
+
+.ct-icon-box:hover {
+  background: #1d213f;
+  color: #fff;
+}
+
+.ct-icon-boxes {
+  margin: 65px;
+  max-width: 525px auto;
+  overflow: auto;
+  clear: both;
+}
+
+.ct-icon-boxes .ct-icon-box__header {
+  font-size: 25px;
+  text-transform: uppercase;
+}
+
+section h3 {
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+@media only screen and (min-width: 480px) {
+
+  .ct-icon-boxes .ct-icon-box.top-right,
+  .ct-icon-boxes .ct-icon-box.bottom-right {
+    margin-left: 10px;
+  }
+}
+
+.ct-icon-boxes .ct-icon-box>.ct-icon-boxes .ct-icon-box__inner,
+.ct-icon-boxes .ct-icon-box>.inner {
+  display: grid;
+  width: 100%;
+  vertical-align: middle;
+}
+
+.container {
+  margin: 0 auto;
+}
+
+.ct-icon-boxes .ct-icon-box .ct-icon-box__icon{
+	font-size: 70px;
+  font-weight: 800;
+}
+/*mainpage End*/
+
+
+/* Footer start*/
+.footer{
+	position: absolute;
+	display: flex;
+	box-sizing: border-box;
+	justify-content: center;
+	align-items: center;
+	height: 36px;
+	right: 1px;
+	bottom: -100px;
+	width: 100%;
+	border: 1px;
+	transition: all 0.5s ease;
+	background: #1d1b31;
+}
+
+
+.footer-description{
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: #fff;
+	margin: 0;
+	font-size: 13px;
+}
+/* Footer end*/
+
+
+/*diabetes From Style*/
+.container {
+	position: absolute;
+	display: flex;
+	top: 23px;
+	bottom: 0;
+	right: 0;
+	left: 0;
+}
+
+.diabetes-prediction-content {
+	position: relative;
+	/*background: #373546;*/
+	top: 0;
+	left: 2px;
+	width: 99.65%;
+	height: 96.3vh;
+	max-width: 100%;
+	max-height: 100vh;
+	display: flex;
+	padding: 1em 2em;
+	border-radius: 5px;
+	border: 1px;
+}
+
+/*Main Entry Form Start*/
+
+.diabetes-entry-form{
+	position: absolute;
+	top: 10px;
+	right: 30px;
+	bottom: 5px;
+	width: 33.5%;
+	height: 82vh;
+	border-radius: 5px;
+	/*background: #060b23;*/
+	/*#060b23*/
+}
+
+.main-entry-form{
+	position: absolute;
+	top: 0;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+.main-entry-form-part1{
+	position: absolute;
+	top: 11vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part2{
+	position: absolute;
+	top: 21vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part3{
+	position: absolute;
+	top: 31vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part4{
+	position: absolute;
+	top: 41vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part5{
+	position: absolute;
+	top: 51vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part6{
+	position: absolute;
+	top: 61vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+.main-entry-form-part7{
+	position: absolute;
+	top: 71vh;
+	left: 5px;
+	bottom: 0;
+	width: 40%;
+	height: 15vh;
+	padding: 0.5em 1em;
+	/*background: red;*/
+}
+
+form .main-entry-form .form .form__input{
+	margin-bottom: 5px;
+	margin: 5px 0 3px 0;
+}
+
+.form {
+  position: relative;
+  width: 20rem;
+  height: 3rem;
+}
+.form__input {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  border: 2px solid #e1e5ee;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: inherit;
+  color: white;
+  outline: none;
+  padding: 1.25rem;
+  background: none;
+  justify-content: space-between;
+}
+.form__input:hover {
+  border-color: #adffff;
+}
+
+/* Change border when input focus*/
+.form__input:focus {
+  border-color: #18ffff;
+}
+
+.form__label {
+  position: absolute;
+  left: 1rem;
+  top: 0.8rem;
+  padding: 0 0.5rem;
+  color: white;
+  font-size: 16.2px;
+  font-weight: 700;
+  cursor: text;
+  transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+  background-color: #3A4547;
+}
+
+
+.form__input:focus ~ .form__label,
+.form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
+  top: -0.5rem;
+  font-size: 0.8rem;
+  left: 0.8rem;
+}
+
+.main-entry-form .form__input input,
+input::-webkit-input-placeholder{
+	position: absolute;
+	top: 14px;
+	right: 5px;
+  font-size: 10.2px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.4);
+	overflow: visible;
+	text-align: center;
+	justify-content: center;
+	align-items: center;
+}
+
+.diabetes-form-images img{
+	position: absolute;
+	top: 40px;
+	left: 20px;
+	right: 1px;
+	bottom: 5px;
+	width: 63%;
+	height: 70vh;
+	border-radius: 5px;
+}
+
+.diabetes-form-details{
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 1px;
+	bottom: 5px;
+	width: 100%;
+	height: 96.9vh;
+	border: 1px solid #3A4547;
+	border-radius: 5px;
+	background: #3A4547;
+	/*#060b23*/
+}
+
+/*Main Entry Form End*/
+
+
+
+.diabetes-main-form .savebutton {
+	position: absolute;
+	left: 10px;
+	width:98.2%;
+	height: 45px;
+	bottom: 15px;
+	outline: none;
+	background: rgba(255, 255, 255, 0.05);
+	border-radius: 5px;
+}
+
+.diabetes-main-form .savebutton .submitbtn .savebtn {
+	position: absolute;
+	display: flex;
+	right: 10px;
+	bottom: 5px;
+	width: 95px;
+	padding: 4px;
+	border-top: none;
+	border-left: none;
+	border-radius: 50px;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background: #04C9EC;
+}
+
+.diabetes-main-form .savebutton .savebtn:hover{
+	background: #5C9EA9;
+}
+
+.diabetes-main-form .savebutton .resultbtn .showbtn {
+	position: absolute;
+	display: flex;
+	left: 10px;
+	bottom: 6px;
+	width: 160px;
+	padding: 4px;
+	border-top: none;
+	border-left: none;
+	border-radius: 50px;
+	outline: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	text-align: center;
+	align-items: center;
+	justify-content: center;
+	background: #83AD0C;
+}
+
+.diabetes-main-form .savebutton .resultbtn .showbtn:hover {
+	background: #56700E;
+}	
+
+/*Popup CSS Start*/
+
+/*Popup CSS Start*/
+
+.modal {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: rgba(77, 77, 77, 0.7);
+	transition: all 0.4s;
+	visibility: hidden;
+	opacity: 0;
+}
+
+.modal:target {
+	visibility: visible;
+	opacity: 1;
+}
+
+.modalcontent {
+	position: relative;
+	bottom: 70px;
+	width: 80%;
+	height: 60%;
+	padding: 1em 2em;
+	border-radius: 4px;
+	background: rgb(226, 226, 226);
+}
+
+.modalcontent-header{
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 99.8%;
+	height: 40px;
+	border-radius: 5px;
+	background: #323047;
+}
+
+.modalcontent-header h1{
+	position: absolute;
+	color: #fff;
+	margin-top: 6px;
+	left: 20px;
+}
+
+
+.modalclose {
+	position: absolute;
+	top: 5.5px;
+	right: 15px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	background: #fff;
+	text-decoration: none;
+}
+
+.modalcontent a{
+	position: absolute;
+	font-size: 21px;
+	font-weight: 700;
+	color: red;
+	text-align: center;
+	justify-content: center;
+}
+
+.modalclose:hover{
+	color: #fff;
+	font-weight: 900;
+	background: #4CCEE8;
+}
+
+.modal .modalcontent .modal-footer{
+	position: absolute;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	width: 100%;
+	height:30px;
+	align-items: center;
+	justify-content: center;
+	background: #4d4b63;
+}
+
+.modal .modalcontent .modal-footer p{
+	position: relative;
+	left: 20px;
+	top: 5px;
+	font-size: 13px;
+	color: #fff;
+	font-weight: 400;
+}
+
+.result-prediction-box{
+	position: absolute;
+	top: 43%;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	width: 100%;
+	height: 79%;
+	box-sizing: border-box;
+	text-align: center;
+	align-items: center;
+}
+
+.result-prediction-box span{
+	position: relative;
+	font-size: 35px;
+	font-weight: 900;
+	color: #02104e;
+}
+
+/*Popup CSS END*/
+/*Mobile Price From End*/
