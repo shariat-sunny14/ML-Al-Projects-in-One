@@ -660,6 +660,12 @@ input::-webkit-input-placeholder{
 	align-items: center;
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   /* opacity: 0; */
+   display: none;
+}
+
 .student-form-images img{
 	position: absolute;
 	top: 40px;

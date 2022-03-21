@@ -1018,6 +1018,12 @@ select::-webkit-input-placeholder{
 	background: rgba(255, 255, 255, 8.0);
 }
 
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {  
+   /* opacity: 0; */
+   display: none;
+}
+
 .mobile-price-details .select-box select:hover{
 	position: relative;
 	left: 11px;
